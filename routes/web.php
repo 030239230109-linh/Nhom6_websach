@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bookController;
 
-<<<<<<< HEAD
+
 
 Route::get('/truonghomailinh', function () {
     return "Trương Hồ Mai Linh";
 });
-=======
 Route::get('/nguyenthithuylinh', function () {
     dd("Nguyen Thi Thuy Linh");
 });
