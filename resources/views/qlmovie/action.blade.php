@@ -25,6 +25,7 @@
 
 <h2>Danh sách phim Action</h2>
 
+
 <table>
 <tr>
     <th>Tên phim</th>
@@ -38,6 +39,7 @@
     <td>{{ $m->movie_name }}</td>
     <td>{{ $m->release_date }}</td>
     <td>{{ $m->overview }}</td>
+    
     <td>
         <img src="{{ $m->image_link }}" alt="image">
     </td>

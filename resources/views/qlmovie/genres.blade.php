@@ -14,6 +14,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <h2>Danh sách thể loại</h2>

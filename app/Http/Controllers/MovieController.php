@@ -43,4 +43,5 @@ public function hot(){
 
     return view('qlmovie.hot', compact('movies'));
 }
+
 }
