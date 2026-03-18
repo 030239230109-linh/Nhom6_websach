@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -43,5 +42,17 @@ public function hot(){
 
     return view('qlmovie.hot', compact('movies'));
 }
+
+// 7.4
+    function RunTimeOver120() 
+    {
+        $movies = DB::table('movie')
+        ->select('movie_name','release_date','runtime')
+        ->where('runtime','>',120)
+        ->limit(10)
+        ->get();
+
+        return view("movies.runtime_over_120", compact("movies"));
+    }
 
 }

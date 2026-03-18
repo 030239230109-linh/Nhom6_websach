@@ -39,3 +39,5 @@ Route::get("/qlmovie/canada","App\Http\Controllers\MovieController@canada");
 Route::get("/qlmovie/action","App\Http\Controllers\MovieController@action");
 /*bài tập 7.7 */
 Route::get("/qlmovie/hot","App\Http\Controllers\MovieController@hot");
+/*bài tập 7.4 */
+Route::get("/qlmovie/runtime_over_120","App\Http\Controllers\MovieController@RunTimeOver120"); 
