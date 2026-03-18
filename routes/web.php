@@ -1,12 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\bookController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BookController1;
+use App\Http\Controllers\kiemtra1Controller;
 
-Route::get('/kiemtra1','App\Http\Controllers\kiemtra1Controller@kiemtra1'); 
-Route::post('/tinhtuoi','App\Http\Controllers\kiemtra1Controller@tinhtuoi');
+Route::get('/kiemtra1', [kiemtra1Controller::class, 'kiemtra1']); 
+Route::post('/tinhtuoi', [kiemtra1Controller::class, 'tinhtuoi']);
 
-Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtintheloai");
-Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");
+Route::get('/qlsach/theloai', [BookController::class, 'laythongtintheloai']);
+Route::get('/qlsach/thongtinsach', [BookController::class, 'laythongtinsach']);
 
-Route::get("/qlsach/themtheloai","App\Http\Controllers\BookController1@themtheloai");
+Route::get('/qlsach/themtheloai', [BookController1::class, 'themtheloai']);
+
+Route::get('/nguyenhuynhsaly', function () {
+    return "Nguyễn Huỳnh Sa Ly";
+});
