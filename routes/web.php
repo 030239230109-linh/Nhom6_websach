@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\bookController;
 
 
+
+Route::get('/nguyenhuynhthuylinh', function () {
+    return "Nguyễn Huỳnh Thùy Linh";
+});
+=======
+<<<<<<< HEAD
 
 Route::get('/truonghomailinh', function () {
     return "Trương Hồ Mai Linh";
@@ -28,3 +33,4 @@ Route::get('/tenban', function () {
 });
 >>>>>>> cfce62b717191661e1f0606b085d69df2fa14a6a
 >>>>>>> 9c0a3fa1167db62900147759931d826ed9151df4
+>>>>>>> 6fafaec210299e4ee7f2ce346335a6e943c33641
