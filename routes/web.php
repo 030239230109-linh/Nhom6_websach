@@ -14,10 +14,9 @@ Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtinthe
 Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");
 
 Route::get("/qlsach/themtheloai","App\Http\Controllers\BookController1@themtheloai");
-<<<<<<< HEAD
 
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
-=======
+
 Route::get('/tenban', function () {
     return 'Le Nguyen Nhu Quynh - Nhóm 6';
 });
