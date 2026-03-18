@@ -31,3 +31,4 @@ Route::get('/tenban', function () {
     return 'Le Nguyen Nhu Quynh - Nhóm 6';
 });
 
+Route::get('/movies/runtime_over_120','App\Http\Controllers\MovieController@RunTimeOver120'); 
