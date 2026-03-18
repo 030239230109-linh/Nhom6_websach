@@ -18,7 +18,7 @@ Route::get('/nguyenthithuylinh', function () {
 
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
 
-Route::get('/tenban', function () {
+Route::get('/lenguyenquynhnhu', function () {
     return 'Le Nguyen Nhu Quynh - Nhóm 6';
 });
 
