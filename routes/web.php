@@ -30,3 +30,12 @@ Route::get('/nguyenhuynhsaly', function () {
     return "Nguyễn Huỳnh Sa Ly";
 
 });
+
+/*bài tập 7.1 */
+Route::get("/qlmovie/genres","App\Http\Controllers\MovieController@genres");
+/*bài tập 7.5 */
+Route::get("/qlmovie/canada","App\Http\Controllers\MovieController@canada");
+/*bài tập 7.6 */
+Route::get("/qlmovie/action","App\Http\Controllers\MovieController@action");
+/*bài tập 7.7 */
+Route::get("/qlmovie/hot","App\Http\Controllers\MovieController@hot");
