@@ -2,6 +2,17 @@
 <html>
 <head>
     <title>Top Budget Movies</title>
+    <style>
+        table{
+            width: 100%;
+            border-collapse: collapse; 
+        }
+        th,td{
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
