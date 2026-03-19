@@ -1,13 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 
 Route::get('/nguyenhuynhthuylinh', function () {
     return "Nguyễn Huỳnh Thùy Linh";
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> f23bb377ac866c5eb32de71ccc50e858bc16d570
 
 Route::get('/truonghomailinh', function () {
     return "Trương Hồ Mai Linh";
@@ -16,6 +20,7 @@ Route::get('/nguyenthithuylinh', function () {
     dd("Nguyen Thi Thuy Linh");
 });
 
+<<<<<<< HEAD
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
 
 Route::get('/tenban', function () {
@@ -23,3 +28,27 @@ Route::get('/tenban', function () {
 });
 
 Route::get("/qlmovie/topvote","App\Http\Controllers\MovieController@topvote");
+=======
+Route::get('/kiemtra1','App\Http\Controllers\kiemtra1Controller@kiemtra1'); 
+Route::post('/tinhtuoi','App\Http\Controllers\kiemtra1Controller@tinhtuoi');
+
+Route::get("/qlsach/theloai","App\Http\Controllers\BookController@laythongtintheloai");
+Route::get("/qlsach/thongtinsach","App\Http\Controllers\BookController@laythongtinsach");
+
+Route::get("/qlsach/themtheloai","App\Http\Controllers\BookController1@themtheloai");
+
+Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
+
+Route::get('/tenban', function () {
+    return 'Le Nguyen Nhu Quynh - Nhóm 6';});
+
+// Đường dẫn hiển thị 10 phim doanh thu cao nhất
+Route::get('/73_top_budget', function () {
+    $movies = DB::table('movie')
+        ->orderBy('budget', 'desc')
+        ->limit(10)
+        ->get();
+
+    return view('73_top_budget', compact('movies'));
+}); 
+>>>>>>> f23bb377ac866c5eb32de71ccc50e858bc16d570
