@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
+
     // 7.1
     public function genres(){
         $genres = DB::table('genre')->get();
@@ -55,4 +56,14 @@ public function hot(){
         return view("movies.runtime_over_120", compact("movies"));
     }
 
+
+    // 7.2
+    public function topvote(){
+        $movies = DB::table('movie')
+            ->orderByDesc('vote_average')
+            ->limit(10)
+            ->get();
+
+        return view('qlmovie.topvote', compact('movies'));
+    }
 }

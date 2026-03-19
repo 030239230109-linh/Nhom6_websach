@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\BookController1;
-use App\Http\Controllers\kiemtra1Controller;
+use Illuminate\Support\Facades\DB;
+
 
 Route::get('/nguyenhuynhthuylinh', function () {
     return "Nguyễn Huỳnh Thùy Linh";
@@ -41,3 +40,28 @@ Route::get("/qlmovie/action","App\Http\Controllers\MovieController@action");
 Route::get("/qlmovie/hot","App\Http\Controllers\MovieController@hot");
 /*bài tập 7.4 */
 Route::get("/qlmovie/runtime_over_120","App\Http\Controllers\MovieController@RunTimeOver120"); 
+
+Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
+
+Route::get('/tenban', function () {
+    return 'Le Nguyen Nhu Quynh - Nhóm 6';
+});
+
+/*bài tập 7.2 */
+Route::get("/qlmovie/topvote","App\Http\Controllers\MovieController@topvote");
+
+Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
+
+Route::get('/tenban', function () {
+    return 'Le Nguyen Nhu Quynh - Nhóm 6';});
+
+// bài tập 7.3
+Route::get('/73_top_budget', function () {
+    $movies = DB::table('movie')
+        ->orderBy('budget', 'desc')
+        ->limit(10)
+        ->get();
+
+    return view('73_top_budget', compact('movies'));
+}); 
+
