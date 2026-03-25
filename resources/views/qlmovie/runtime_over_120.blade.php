@@ -54,7 +54,6 @@
     </style>    
 </head>
 <body>
-
     @foreach($movies as $movie)
         Tên phim: {{ $movie->movie_name }}
         Ngày phát hành: {{ $movie->release_date }}

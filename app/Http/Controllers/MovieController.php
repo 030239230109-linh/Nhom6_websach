@@ -70,11 +70,12 @@ class MovieController extends Controller
             ->join('genre', 'movie_genre.id_genre', '=', 'genre.id')
             ->where('genre.genre_name', 'Action')
             ->select('movie.movie_name', 'movie.release_date', 'movie.overview', 'movie.image_link')
-            ->distinct()
-            ->get();
+            ->distinct();
 
-        return view('qlmovie.action', compact('movies'));
+        return view("qlmovie.runtime_over_120", compact("movies"));
     }
+
+
 
     // 7.7
     public function hot()
