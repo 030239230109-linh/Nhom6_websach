@@ -1,6 +1,6 @@
 <x-book-layout>
-    <x-slot name ='title'>
-        Sách
+    <x-slot name='title'>
+        Chi tiết sách
     </x-slot>
 <style>
     .info
@@ -9,10 +9,10 @@
         grid-template-columns:repeat(2,30% 70%);
     }
 </style>
-<h4>{{$data->tieu_de}}</h4>
-<div class='info'>
+    <h4>{{$data->tieu_de}}</h4>
+    <div class='info'>
     <div>
-        <img src="{{asset('book_image/'.$data->file_anh_bia)}}" width="200px" height="200px">
+        <img src="{{asset('hinh/image/'.$data->file_anh_bia)}}" width="200px" height="200px">
     </div>
     <div>
         Nhà cung cấp: <b>{{$data->nha_cung_cap}}</b><br>
@@ -22,9 +22,9 @@
     </div>
 </div>
 <div class='row'>
-   <div class='col-sm-12'>
+    <div class='col-sm-12'>
     <b>Mô tả:</b><br>
-    {{$data->mo_ta}}
-</div>
+        {{$data->mo_ta}}
+    </div>
 </div>
 </x-book-layout>

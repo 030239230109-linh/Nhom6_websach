@@ -1,73 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\BookController;
 
-Route::get('/nguyenhuynhthuylinh', function () {
-    return "Nguyễn Huỳnh Thùy Linh";
-});
+// Trang mặc định
+Route::get('/sach', [BookController::class, 'index']);
 
-Route::get('/truonghomailinh', function () {
-    return "Trương Hồ Mai Linh";
-});
-Route::get('/nguyenthithuylinh', function () {
-    dd("Nguyen Thi Thuy Linh");
-});
+// Lọc theo thể loại
+Route::get('/sach/theloai/{id}', [BookController::class, 'theloai']);
 
-Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
-
-Route::get('/lenguyenquynhnhu', function () {
-    return 'Le Nguyen Nhu Quynh - Nhóm 6';
-});
-
-Route::get('/lethihonglinh', function () {
-    dd("Le Thi Hong Linh");
-});
-
-Route::get('/nguyenhuynhsaly', function () {
-    return "Nguyễn Huỳnh Sa Ly";
-
-});
-
-/*bài tập 7.1 */
-Route::get("/qlmovie/genres","App\Http\Controllers\MovieController@genres");
-/*bài tập 7.5 */
-Route::get("/qlmovie/canada","App\Http\Controllers\MovieController@canada");
-/*bài tập 7.6 */
-Route::get("/qlmovie/action","App\Http\Controllers\MovieController@action");
-/*bài tập 7.7 */
-Route::get("/qlmovie/hot","App\Http\Controllers\MovieController@hot");
-/*bài tập 7.4 */
-Route::get("/qlmovie/runtime_over_120","App\Http\Controllers\MovieController@RunTimeOver120"); 
-
-Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
-
-<<<<<<< HEAD
-Route::get('/tenban', function () {
-    return 'Le Nguyen Nhu Quynh - Nhóm 6';
-});
-
-/*bài tập 7.2 */
-Route::get("/qlmovie/topvote","App\Http\Controllers\MovieController@topvote");
-
-Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
-
-Route::get('/tenban', function () {
-    return 'Le Nguyen Nhu Quynh - Nhóm 6';});
-
-// bài tập 7.3
-Route::get('/73_top_budget', function () {
-    $movies = DB::table('movie')
-        ->orderBy('budget', 'desc')
-        ->limit(10)
-        ->get();
-
-    return view('73_top_budget', compact('movies'));
-}); 
-
-//Chi tiết sách
-Route::get('/book/{id}', [BookController::class, 'showDetail'])->name('book.detail');
-=======
-Route::get('/movies/runtime_over_120','App\Http\Controllers\MovieController@RunTimeOver120'); 
->>>>>>> c5fb93a1c35ff721b2c3d40586ceb6ed256eb1a6
+// Chi tiết sách
+Route::get('sach/chitiet/{id}','App\Http\Controllers\BookController@chitiet');
