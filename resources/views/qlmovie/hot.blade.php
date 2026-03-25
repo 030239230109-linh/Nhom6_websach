@@ -5,7 +5,7 @@
     <style>
         .container{
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 👈 4 cột */
+            grid-template-columns: repeat(4, 1fr); 
             gap: 20px;
         }
 
