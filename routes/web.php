@@ -43,6 +43,7 @@ Route::get("/qlmovie/runtime_over_120","App\Http\Controllers\MovieController@Run
 
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
 
+<<<<<<< HEAD
 Route::get('/tenban', function () {
     return 'Le Nguyen Nhu Quynh - Nhóm 6';
 });
@@ -67,3 +68,6 @@ Route::get('/73_top_budget', function () {
 
 //Chi tiết sách
 Route::get('/book/{id}', [BookController::class, 'showDetail'])->name('book.detail');
+=======
+Route::get('/movies/runtime_over_120','App\Http\Controllers\MovieController@RunTimeOver120'); 
+>>>>>>> c5fb93a1c35ff721b2c3d40586ceb6ed256eb1a6

@@ -1,6 +1,7 @@
-@extends("layouts.sach_layout")
-@section("title","Chi tiết")
-@section("content")
+<x-book-layout>
+    <x-slot name ='title'>
+        Sách
+    </x-slot>
 <style>
     .info
     {
@@ -26,4 +27,4 @@
     {{$data->mo_ta}}
 </div>
 </div>
-@endsection
+</x-book-layout>
