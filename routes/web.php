@@ -27,8 +27,4 @@ Route::get("/qlsach/themtheloai","App\Http\Controllers\BookController1@themthelo
 
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
 
-Route::get('/tenban', function () {
-    return 'Le Nguyen Nhu Quynh - Nhóm 6';
-});
-
 Route::get('/movies/runtime_over_120','App\Http\Controllers\MovieController@RunTimeOver120'); 
