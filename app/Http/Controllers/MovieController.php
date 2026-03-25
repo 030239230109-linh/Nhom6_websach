@@ -53,7 +53,7 @@ public function hot(){
         ->limit(10)
         ->get();
 
-        return view("movies.runtime_over_120", compact("movies"));
+        return view("qlmovie.runtime_over_120", compact("movies"));
     }
 
 
