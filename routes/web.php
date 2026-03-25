@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\BookController;
 
 Route::get('/nguyenhuynhthuylinh', function () {
     return "Nguyễn Huỳnh Thùy Linh";
@@ -65,3 +65,5 @@ Route::get('/73_top_budget', function () {
     return view('73_top_budget', compact('movies'));
 }); 
 
+//Chi tiết sách
+Route::get('/book/{id}', [BookController::class, 'showDetail'])->name('book.detail');
