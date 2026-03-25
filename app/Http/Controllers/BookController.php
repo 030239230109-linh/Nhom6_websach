@@ -4,23 +4,20 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller{
-    function laythongtintheloai(){
-        $the_loai_sach = DB::table("dm_the_loai")->get();  // TƯƠNG TỰ CÂU LỆNH SELECT * FROM DM_THE_LOAI
-        //$the_loai_sach = DB::table("dm_the_loai")->where("id",">",1) ->get(); TƯƠNG TỰ CÂU LỆNH SELECT * FROM DM_THE_LOAI where id = 1
-        return view("qlsach.the_loai",compact("the_loai_sach"));
-    }
-
-    function laythongtinsach()
+   // Hiển thị tất cả sách
+public function index()
 {
-    $the_loai = "Tác phẩm kinh điển";
+    $data = DB::table("sach")->get();
+    return view("qlysach.sach", compact("data"));
+}
 
-    $sach = DB::select("
-        SELECT s.tieu_de, s.nha_xuat_ban, s.tac_gia, s.gia_ban, s.link_anh_bia
-        FROM sach s
-        JOIN dm_the_loai t ON s.the_loai = t.id
-        WHERE t.ten_the_loai = ?
-    ", [$the_loai]);
+// Hiển thị theo thể loại
+public function theloai($id)
+{
+    $data = DB::table("sach")
+                ->where("the_loai", $id)
+                ->get();
 
-    return view("qlsach.thong_tin_sach", compact("sach"));
+    return view("qlysach.sach", compact("data"));
 }
 }
