@@ -8,23 +8,12 @@ use Illuminate\Support\Facades\DB;
 class MovieController extends Controller
 {
 
-    public function getGenres()
-    {
-        // Truy vấn dữ liệu từ bảng genres
-        $genres = DB::table('genres')->select('genre_name', 'genre_name_vn')->get();
-
-        // Trả về view để hiển thị
-        return view('view_genres', compact('genres'));
-    }
-}
-
-
     // 7.1
     public function genres(){
         $genres = DB::table('genre')->get();
         return view('qlmovie.genres', compact('genres'));
     }
-// 7.5
+    // 7.5
     public function canada(){
         $movies = DB::table('movie')
             ->where('country_name', 'Canada')
@@ -78,5 +67,6 @@ public function hot(){
 
         return view('qlmovie.topvote', compact('movies'));
     }
-}
 
+
+}
