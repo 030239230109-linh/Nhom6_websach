@@ -1,8 +1,10 @@
-@extends("layouts.sach_layout")
+<x-book-layout>
 
-@section("title","Sách")
+<x-slot name='title'>
+    Sách
+</x-slot>
 
-@section("content")
+
 
 <h4>Danh sách sách</h4>
 
@@ -17,5 +19,4 @@
         </div>
     @endforeach
 </div>
-
-@endsection
+</x-book-layout>
