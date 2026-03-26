@@ -63,5 +63,6 @@ Route::get('/73_top_budget', function () {
         ->get();
 
     return view('73_top_budget', compact('movies'));
-}); 
-
+});
+Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
+Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
