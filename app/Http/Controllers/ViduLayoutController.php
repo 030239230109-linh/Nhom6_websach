@@ -15,4 +15,12 @@ function theloai($id)
 $data = DB::select("select * from sach where the_loai = ?",[$id]);
 return view("vidusach.index", compact("data"));
 }
+function chitiet($id)
+{
+    $data = DB::select("select * from sach where id = ?", [$id]);
+
+    return view("vidusach.chitiet", [
+        "book" => $data[0] // lấy phần tử đầu
+    ]);
+}
 }

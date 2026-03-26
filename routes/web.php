@@ -1,8 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
 
+/*
+|--------------------------------------------------------------------------
+| Test route từng thành viên
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/nguyenhuynhthuylinh', function () {
     return "Nguyễn Huỳnh Thùy Linh";
@@ -11,36 +15,32 @@ Route::get('/nguyenhuynhthuylinh', function () {
 Route::get('/truonghomailinh', function () {
     return "Trương Hồ Mai Linh";
 });
+
 Route::get('/nguyenthithuylinh', function () {
-    dd("Nguyen Thi Thuy Linh");
+    return "Nguyen Thi Thuy Linh";
 });
 
-Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
+Route::get('/lehoangan', function () {
+    return 'Lê Hoàng An';
+});
 
 Route::get('/lenguyenquynhnhu', function () {
     return 'Le Nguyen Nhu Quynh - Nhóm 6';
 });
 
 Route::get('/lethihonglinh', function () {
-    dd("Le Thi Hong Linh");
+    return "Le Thi Hong Linh";
 });
 
 Route::get('/nguyenhuynhsaly', function () {
     return "Nguyễn Huỳnh Sa Ly";
-
 });
 
-/*bài tập 7.1 */
-Route::get("/qlmovie/genres","App\Http\Controllers\MovieController@genres");
-/*bài tập 7.5 */
-Route::get("/qlmovie/canada","App\Http\Controllers\MovieController@canada");
-/*bài tập 7.6 */
-Route::get("/qlmovie/action","App\Http\Controllers\MovieController@action");
-/*bài tập 7.7 */
-Route::get("/qlmovie/hot","App\Http\Controllers\MovieController@hot");
-/*bài tập 7.4 */
-Route::get("/qlmovie/runtime_over_120","App\Http\Controllers\MovieController@RunTimeOver120"); 
-
+/*
+|--------------------------------------------------------------------------
+| Movie routes (Bài tập 7)
+|--------------------------------------------------------------------------
+*/
 Route::get("/lehoangan", function() {return 'Lê Hoàng An';});
 
 Route::get('/tenban', function () {
@@ -66,3 +66,15 @@ Route::get('/73_top_budget', function () {
 });
 Route::get('/sach','App\Http\Controllers\ViduLayoutController@sach');
 Route::get('/sach/theloai/{id}','App\Http\Controllers\ViduLayoutController@theloai');
+
+Route::get('/qlmovie/genres', 'App\Http\Controllers\MovieController@genres');                // 7.1
+Route::get('/qlmovie/topvote', 'App\Http\Controllers\MovieController@topvote');              // 7.2
+Route::get('/qlmovie/topbudget', 'App\Http\Controllers\MovieController@topbudget');          // 7.3
+Route::get('/qlmovie/runtime_over_120', 'App\Http\Controllers\MovieController@RunTimeOver120'); // 7.4
+Route::get('/qlmovie/canada', 'App\Http\Controllers\MovieController@canada');                // 7.5
+Route::get('/qlmovie/action', 'App\Http\Controllers\MovieController@action');                // 7.6
+Route::get('/qlmovie/hot', 'App\Http\Controllers\MovieController@hot');                      // 7.7
+
+
+Route::get('/sach/chitiet/{id}', 'App\Http\Controllers\ViduLayoutController@chitiet');
+
