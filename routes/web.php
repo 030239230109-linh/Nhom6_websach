@@ -49,3 +49,6 @@ Route::get('/qlmovie/runtime_over_120', 'App\Http\Controllers\MovieController@Ru
 Route::get('/qlmovie/canada', 'App\Http\Controllers\MovieController@canada');                // 7.5
 Route::get('/qlmovie/action', 'App\Http\Controllers\MovieController@action');                // 7.6
 Route::get('/qlmovie/hot', 'App\Http\Controllers\MovieController@hot');                      // 7.7
+use App\Http\Controllers\ViduLayoutController;
+
+Route::get('/sach/chitiet/{id}', [ViduLayoutController::class, 'chitiet']);
